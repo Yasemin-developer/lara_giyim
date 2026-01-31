@@ -15,6 +15,10 @@ a{
     text-decoration: none;
 }
 
+.disabled{
+    color: darkgray;
+}
+
 /*nav etiketinin  ve fiyatlandırma kartının mobilde görünüşünün ayarlanması*/
 @media (min-width:320px) and (max-width:767px){
    nav{
@@ -100,11 +104,15 @@ h1{
     
 }
 
-.pricing-wrapper .card,.card popular{
+.pricing-wrapper .card,.card-popular{
    height: auto;
    border: 3px solid black;
    border-radius: 30px;
-   text-align: center;
+  display: flex;/*kartların içindeki yapıları hizalayabilmek için*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
    background-color:#0097A7;
   
 }
@@ -135,6 +143,7 @@ ul {
 .pricing-wrapper .card-footer{
     display: flex;
     flex-direction:row;
+      margin-top: auto;/*alta iter*/
     /*card footerlerin kart içinde ortalanması için*/
    align-items: center;
    justify-content: center;
@@ -162,6 +171,7 @@ nav a{
     border-radius: 30px;
     background-color: 	#B3E5FC;
     margin: 3px;
+   
 }
 #hero{
     margin: 0px auto;
@@ -231,18 +241,25 @@ h1{
     
 }
 
-.pricing-wrapper .card,.card popular{
+.pricing-wrapper .card,.card-popular{
    /*kartlara şekil vermek için*/
    border: 3px solid black;
    border-radius: 30px;
     height: 100%; /*align-items:stretch ile brlikte kartların eşit yükekliğe sahip olmasını sağlar*/
-  text-align: center;
+ display: flex;/*kartların içindeki yapıları hizalayabilmek için*/
+ flex-direction: column;
  background-color:#0097A7;
 
-  
+  justify-content: center;
+   align-items: center;
 }
 
+
   
+  .card-header,.badge{
+    text-align: center;
+  }
+
 
 .main-container .page-header{
     text-align: center;
@@ -258,13 +275,14 @@ ul {
     border: 3px solid #B3E5FC;
     border-radius: 25px;
     background-color: #B3E5FC;
-    display: inline-block; /*div e inline ve nlock özellikleri verilmesi için*/
+    display: inline-block; /*div e inline ve block özellikleri verilmesi için*/
 }
 
 
 .pricing-wrapper .card-footer{
     display: flex;
     flex-direction:row;
+   margin-top: auto;/*alta iter*/
     /*card footerlerin kart içinde ortalanması için*/
    align-items: center;
    justify-content: center;
@@ -273,6 +291,7 @@ ul {
 
 .card-footer,.badge{
     margin: 5px;
+   
 }
 
 
@@ -425,6 +444,78 @@ ul {
 }
 
 
+ .ceket_container{
+     margin: 0px auto;
+   width: 100%;
+    display: grid;
+    grid-template-columns: 1fr  ;/*aynı satırda genişliği eşit 3 sütun*/
+    gap:5px;/*kutular araında her yönden 10px boşluk bırakır*/
+  box-sizing: border-box; /*taşmayı önler*/
+   
+    text-align: center;
+    font-size:large;
+    font-weight: bold;
+
+}
+
+
+  
+.c_foto {
+    background-color: aqua;
+    padding: 15px;
+
+}
+
+.c_foto img{
+ width: 100%;/*fotoya ayrılan genişliğin yüzde kaçını kullanması için*/
+ height: 85%;/*fotoya ayrılan yüksekliğin yüzde kaçını kullanması için*/
+  object-fit: cover;/*kutuyu kaplıyor*/
+  
+}
+.ceket_container button{
+    border-radius: 20px;
+    margin: 6px;
+    font-size: large;
+   font-weight: bold;
+}
+
+
+ .ay_container{
+     margin: 0px auto;
+   width: 100%;
+    display: grid;
+    grid-template-columns: 1fr  ;/*aynı satırda genişliği eşit 3 sütun*/
+    gap:5px;/*kutular araında her yönden 10px boşluk bırakır*/
+  box-sizing: border-box; /*taşmayı önler*/
+   
+    text-align: center;
+    font-size:large;
+    font-weight: bold;
+
+}
+
+
+  
+.ay_foto {
+    background-color: aqua;
+    padding: 15px;
+
+}
+
+.ay_foto img{
+ width: 100%;/*fotoya ayrılan genişliğin yüzde kaçını kullanması için*/
+ height: 85%;/*fotoya ayrılan yüksekliğin yüzde kaçını kullanması için*/
+  object-fit: cover;/*kutuyu kaplıyor*/
+  
+}
+.ay_container button{
+    border-radius: 20px;
+    margin: 6px;
+    font-size: large;
+   font-weight: bold;
+}
+
+
 }
 
 
@@ -433,7 +524,7 @@ ul {
    
    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr ;/*aynı satırda genişliği eşit 3 sütun*/
+    grid-template-columns: 1fr 1fr ;/*aynı satırda genişliği eşit 2 sütun*/
     gap:10px;/*kutular araında her yönden 10px boşluk bırakır*/
   box-sizing: border-box; /*taşmayı önler*/
    
@@ -572,6 +663,80 @@ ul {
     font-size: xx-large;
     font-weight: bold;
 }
+
+
+.ceket_container{
+   
+   width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;/*aynı satırda genişliği eşit 2 sütun*/
+    gap:10px;/*kutular araında her yönden 10px boşluk bırakır*/
+  box-sizing: border-box; /*taşmayı önler*/
+   
+   text-align: center;
+    font-size:xx-large;
+    font-weight: bold;
+    margin: 8px;
+    padding: 5px;
+
+}
+
+
+  
+.c_foto {
+    background-color: aqua;
+    padding:20px;
+}
+
+.c_foto img{
+ width: 100%;/*fotoya ayrılan genişliğin yüzde kaçını kullanması için*/
+ height: 80%;/*fotoya ayrılan yüksekliğin yüzde kaçını kullanması için*/
+  object-fit: cover;/*kutuyu kaplıyor*/
+  
+}
+.ceket_container button{
+    border-radius: 20px;
+    margin: 5px;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.ay_container{
+   
+   width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;/*aynı satırda genişliği eşit 2 sütun*/
+    gap:10px;/*kutular araında her yönden 10px boşluk bırakır*/
+  box-sizing: border-box; /*taşmayı önler*/
+   
+   text-align: center;
+    font-size:xx-large;
+    font-weight: bold;
+    margin: 8px;
+    padding: 5px;
+
+}
+
+
+  
+.ay_foto {
+    background-color: aqua;
+    padding:20px;
+}
+
+.ay_foto img{
+ width: 100%;/*fotoya ayrılan genişliğin yüzde kaçını kullanması için*/
+ height: 80%;/*fotoya ayrılan yüksekliğin yüzde kaçını kullanması için*/
+  object-fit: cover;/*kutuyu kaplıyor*/
+  
+}
+.ay_container button{
+    border-radius: 20px;
+    margin: 5px;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
 }
 
 @media (min-width:1025px) {
@@ -580,7 +745,7 @@ ul {
    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;/*aynı satırda genişliği eşit 3 sütun*/
-    gap:10px;/*kutular araında her yönden 10px boşluk bırakır*/
+    gap:10px;/*kutular arasında her yönden 10px boşluk bırakır*/
   box-sizing: border-box; /*taşmayı önler*/
     border-radius: 20px;
     margin-left: 5px;
@@ -720,5 +885,76 @@ ul {
 }
 
 
+.ceket_container{
+     margin: 0px auto;
+   width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;/*aynı satırda genişliği eşit 3 sütun*/
+    gap:10px;/*kutular araında her yönden 10px boşluk bırakır*/
+  box-sizing: border-box; /*taşmayı önler*/
+    border-radius: 20px;
+    margin-left: 5px;
+     text-align: center;
+    font-size: large;
+    font-weight: bold;
+  
+
+}
+
+
+.c_foto {
+    background-color: aqua;
+    padding: 30px;
+
+}
+
+.c_foto img{
+ width: 100%;/*fotoya ayrılan genişliğin tamamını kullanmak için*/
+ height: 90%;/*fotoya ayrılan yüksekliğin tamamını kullanmak için*/
+  object-fit: cover;/*kutuyu kaplıyor*/
+  
+}
+.ceket_container button{
+    border-radius: 20px;
+    margin: 7px;
+    font-size:large ;
+    font-weight: bold;
+}
+
+.ay_container{
+     margin: 0px auto;
+   width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;/*aynı satırda genişliği eşit 3 sütun*/
+    gap:10px;/*kutular araında her yönden 10px boşluk bırakır*/
+  box-sizing: border-box; /*taşmayı önler*/
+    border-radius: 20px;
+    margin-left: 5px;
+     text-align: center;
+    font-size: large;
+    font-weight: bold;
+  
+
+}
+
+
+.ay_foto {
+    background-color: aqua;
+    padding: 30px;
+
+}
+
+.ay_foto img{
+ width: 100%;/*fotoya ayrılan genişliğin tamamını kullanmak için*/
+ height: 90%;/*fotoya ayrılan yüksekliğin tamamını kullanmak için*/
+  object-fit: cover;/*kutuyu kaplıyor*/
+  
+}
+.ay_container button{
+    border-radius: 20px;
+    margin: 7px;
+    font-size:large ;
+    font-weight: bold;
+}
 
 }
