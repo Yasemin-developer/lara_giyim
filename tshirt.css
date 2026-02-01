@@ -1,0 +1,124 @@
+
+/*t-shirt ürünlerinin mobilde düzenlenmesi*/
+
+@media (min-width:320px) and (max-width:767px){
+    .tshirt_container{
+     margin: 0px auto;
+   width: 100%;
+    display: grid;
+    grid-template-columns: 1fr  ;/*1 sütun*/
+    gap:5px;/*kutular araında her yönden 5px boşluk bırakır*/
+  box-sizing: border-box; /*taşmayı önler*/
+   
+    text-align: center;
+    font-size:large;
+    font-weight: bold;
+
+}
+
+
+  
+.t_foto {
+    background-color: aqua;
+    padding: 15px;
+
+}
+
+.t_foto img{
+ width: 100%;/*fotoya ayrılan genişliğin yüzde kaçını kullanması için*/
+ height: 85%;/*fotoya ayrılan yüksekliğin yüzde kaçını kullanması için*/
+  object-fit: cover;/*kutuyu kaplıyor*/
+  
+}
+.tshirt_container button{
+    border-radius: 20px;
+    margin: 6px;
+    font-size: large;
+   font-weight: bold;
+}
+
+}
+
+
+/*t-shirt ürünlerinin tablette düzenlenmesi*/
+
+@media (min-width:768px) and (max-width:1024px){
+    .tshirt_container{
+   
+   width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;/*aynı satırda genişliği eşit 2 sütun*/
+    gap:10px;/*kutular araında her yönden 10px boşluk bırakır*/
+  box-sizing: border-box; /*taşmayı önler*/
+   
+   text-align: center;
+    font-size:larger;
+    font-weight: bold;
+    margin: 8px;
+    padding: 5px;
+
+}
+
+
+  
+.t_foto {
+    background-color: aqua;
+    padding:20px;
+}
+
+.t_foto img{
+ width: 100%;/*fotoya ayrılan genişliğin yüzde kaçını kullanması için*/
+ height: 80%;/*fotoya ayrılan yüksekliğin yüzde kaçını kullanması için*/
+  object-fit: cover;/*kutuyu kaplıyor*/
+  
+}
+.tshirt_container button{
+    border-radius: 20px;
+    margin: 5px;
+    font-size:larger;
+    font-weight: bold;
+}
+
+}
+
+
+/*t-shirt ürünlerinin bilgisayarda düzenlenmesi*/
+
+@media (min-width:1025px){
+    .tshirt_container{
+     margin: 0px auto;
+   width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;/*aynı satırda genişliği eşit 3 sütun*/
+    gap:10px;/*kutular arasında her yönden 10px boşluk bırakır*/
+  box-sizing: border-box; /*taşmayı önler*/
+    border-radius: 20px;
+    margin-left: 5px;
+     text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+  
+
+}
+
+
+.t_foto {
+    background-color: aqua;
+    padding: 30px;
+
+}
+
+.t_foto img{
+ width: 100%;/*fotoya ayrılan genişliğin tamamını kullanmak için*/
+ height: 90%;/*fotoya ayrılan yüksekliğin %90ını kullanmak için*/
+  object-fit: cover;/*kutuyu kaplıyor*/
+  
+}
+.tshirt_container button{
+    border-radius: 20px;
+    margin: 7px;
+    font-size:x-large ;
+    font-weight: bold;
+}
+
+}
