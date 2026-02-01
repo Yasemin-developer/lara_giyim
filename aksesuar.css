@@ -1,0 +1,127 @@
+/*pantalon ürünlerinin mobilde düzenlenmesi*/
+
+@media (min-width:320px) and (max-width:767px){
+    
+.ak_container{
+     margin: 0px auto;/*yatayda ortalanıyor*/
+   width: 100%;
+    display: grid;
+    grid-template-columns: 1fr  ;/*1 sütun*/
+    gap:5px;/*kutular araında her yönden 5px boşluk bırakır*/
+  box-sizing: border-box; /*taşmayı önler*/
+   
+    text-align: center;
+    font-size:large;
+    font-weight: bold;
+
+}
+
+
+  
+.ak_foto {
+    background-color: aqua;
+    padding: 15px;
+
+}
+
+.ak_foto img{
+ width: 100%;/*fotoya ayrılan genişliğin yüzde kaçını kullanması için*/
+ height: 85%;/*fotoya ayrılan yüksekliğin yüzde kaçını kullanması için*/
+  object-fit: cover;/*kutuyu kaplıyor*/
+  
+}
+.ak_container button{
+    border-radius: 20px;
+    margin: 6px;
+    font-size: large;
+   font-weight: bold;
+}
+
+}
+
+
+/*pantalon ürünlerinin tablette düzenlenmesi*/
+
+@media (min-width:768px) and (max-width:1024px){
+  
+.ak_container{
+   
+   width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;/*aynı satırda genişliği eşit 2 sütun*/
+    gap:10px;/*kutular araında her yönden 10px boşluk bırakır*/
+  box-sizing: border-box; /*taşmayı önler*/
+   
+   text-align: center;
+    font-size:larger;
+    font-weight: bold;
+    margin: 8px;
+    padding: 5px;
+
+}
+
+
+  
+.ak_foto {
+    background-color: aqua;
+    padding:20px;
+}
+
+.ak_foto img{
+ width: 100%;/*fotoya ayrılan genişliğin yüzde kaçını kullanması için*/
+ height: 80%;/*fotoya ayrılan yüksekliğin yüzde kaçını kullanması için*/
+  object-fit: cover;/*kutuyu kaplıyor*/
+  
+}
+.ak_container button{
+    border-radius: 20px;
+    margin: 5px;
+    font-size: larger;
+    font-weight: bold;
+}
+
+}
+
+
+/*pantalon ürünlerinin bilgisayarda düzenlenmesi*/
+
+@media (min-width:1025px){
+   
+ .ak_container{
+     margin: 0px auto;
+   width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;/*aynı satırda genişliği eşit 3 sütun*/
+    gap:10px;/*kutular araında her yönden 10px boşluk bırakır*/
+  box-sizing: border-box; /*taşmayı önler*/
+    border-radius: 20px;
+    margin-left: 5px;
+     text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+  
+
+}
+
+
+.ak_foto {
+    background-color: aqua;
+    padding: 30px;
+
+}
+
+.ak_foto img{
+ width: 100%;/*fotoya ayrılan genişliğin tamamını kullanmak için*/
+ height: 90%;/*fotoya ayrılan yüksekliğin belirli bir yüzdeliğini kullanmak için*/
+  object-fit: cover;/*kutuyu kaplıyor*/
+  
+}
+.ak_container button{
+    border-radius: 20px;
+    margin: 7px;
+    font-size:x-large ;
+    font-weight: bold;
+}
+
+
+}

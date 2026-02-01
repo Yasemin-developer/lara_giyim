@@ -1,0 +1,180 @@
+
+nav h1{
+    color: palevioletred;
+}
+
+body{
+    background-color: #80D8FF;
+}
+
+button{
+     background-color:	#00B0FF ;
+}
+
+a{
+    text-decoration: none;
+}
+
+.disabled{
+    color: darkgray;
+}
+
+
+/*nav etiketinin ve hero bölümünün mobilde görünüşünün ayarlanması*/
+@media (min-width:320px) and (max-width:767px){
+     nav{
+         
+    display: flex;
+   
+    justify-content:space-evenly;/* öğeler arasında eşit mesafeler bırakır , tüm boşluklar eşit*/
+   align-items:center;/*karşıt ekseni ortalar*/
+    padding: 10px;
+    flex-wrap: wrap;/* Satır dolunca sığmayan elemanları alt satıra geçirir*/
+   margin: 8px;
+   }
+   nav a{
+    
+    width: 30%;
+    text-align: center;
+    margin: 7px;
+    
+     border: 2px solid 	#B3E5FC;
+    border-radius: 30px;
+    background-color: 	#B3E5FC;
+    
+}
+
+
+#hero{
+   
+       
+      
+     display:grid;
+   grid-template-rows: auto auto; /*satır yükeskliği içerik yüksekliğine göre*/
+     box-sizing: border-box; 
+     justify-content:center; /*yatayda ortalar*/
+     align-content: center; /*dikeyde ortalar*/
+     
+}
+
+
+
+#hero button{
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    margin:5px;
+    padding: 3px;
+}
+
+#hero_foto{
+    height:auto;/*resim yüksekliği içerikle uyumlu*/
+    margin: 25px;
+}
+
+#hero_foto img{
+ width: 100%;
+ height: 100%;
+ object-fit: cover; /*resim bulunduğu alanı kaplasın*/
+}
+#hero #hero_aciklama{
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase; /*büyük harf*/
+    display: flex;
+    flex-direction: column; /*yazıların dikey olarak alt alta yazılması*/
+   gap: 20px;
+  
+}
+#hero #hero_aciklama div{
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase; /*büyük harf*/
+  
+  
+}
+
+h1{
+    font-size: 18px;
+    margin: 0px;
+}
+
+}
+
+
+/*nav etiketinin ve hero bölümünün tablet ve pc de ayarlanması*/
+@media (min-width:768px){
+ nav{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;/* öğeler arasında eşit mesafeler bırakır , tüm boşluklar eşit*/
+   align-items:center;/*karşıt ekseni ortalar*/
+    padding: 10px;
+   
+}
+nav a{
+   
+    width: 15%;
+    text-align: center;
+    border: 2px solid 	#B3E5FC;
+    border-radius: 30px;
+    background-color: 	#B3E5FC;
+    margin: 3px;
+    font-size: 21px;
+   
+}
+#hero{
+    margin: 0px auto;
+    
+     display: grid;
+   grid-template-columns: 1fr 2fr;/*yazı bölümüne 3te 1 image bölümüne 3te 2*/
+     box-sizing: border-box;
+    gap: 20px;
+    
+     
+}
+
+#hero div{
+  padding: 7px;
+   
+}
+
+#hero button{
+    border-radius: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+#hero_foto {
+height: 100%;
+ 
+}
+
+#hero_foto img{
+ width: 100%;
+ height: 100%;
+  object-fit: cover;
+}
+#hero #hero_aciklama{
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase; /*büyük harf*/
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+  
+}
+#hero #hero_aciklama div{
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase; /*büyük harf*/
+   
+    margin: 10px;
+}
+h1{
+      font-size: 25px;
+    margin: 7px;
+}
+
+}

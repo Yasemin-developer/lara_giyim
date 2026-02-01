@@ -1,0 +1,131 @@
+/*fiyatlandırma kartının mobilde görünüşünün ayarlanması*/
+@media (min-width:320px) and (max-width:767px){
+  
+
+
+.pricing-wrapper{
+    display:grid ;
+    grid-template-columns: 1fr ;/*mevcut genişliği bir kutunun genişliği için kullanır*/
+    row-gap: 10px; /*alt alta duran iki kutu arası mesafe*/
+   
+    
+}
+
+.pricing-wrapper .card,.card-popular{
+   height: auto;
+   border: 3px solid black;
+   border-radius: 30px;
+  display: flex;/*kartların içindeki yapıları hizalayabilmek için*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+   background-color:#0097A7;
+  
+}
+.main-container .page-header{
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+.back-link{
+    margin: 20px;
+    text-align: start;
+    border: 2px solid #B3E5FC;
+    border-radius: 25px;
+    background-color:#B3E5FC;
+    display: inline-block; /*div e inline ve nlock özellikleri verilmesi için*/
+
+}
+
+.card-footer,.badge{
+    margin: 15px;
+}
+
+
+
+.pricing-wrapper .card-footer{
+    display: flex;
+    flex-direction:row;
+      margin-top: auto;/*alta iter*/
+    /*card footerlerin kart içinde ortalanması için*/
+   align-items: center;
+   justify-content: center;
+   
+}
+
+}
+
+
+/*fiyatlandırma kartının tablet ve pc de görünüşünün ayarlanması*/
+@media (min-width:768px){
+
+li{
+    font-size: 25px;
+}
+
+.pricing-wrapper{
+    display:grid ;
+    grid-template-columns: 1fr 1fr 1fr;/*eşit yüksekliğe sahip 3 sütun*/
+    column-gap: 30px;/*sütunlar arasında boşluk*/
+   align-items: stretch;
+    
+}
+
+.pricing-wrapper .card,.card-popular{
+   /*kartlara şekil vermek için*/
+   border: 3px solid black;
+   border-radius: 30px;
+    height: 100%; /*align-items:stretch ile brlikte kartların eşit yükekliğe sahip olmasını sağlar*/
+ display: flex;/*kartların içindeki yapıları hizalayabilmek için*/
+ flex-direction: column;
+ background-color:#0097A7;
+  justify-content: center;
+   align-items: center;
+}
+
+
+  
+  .card-header,.badge{
+    text-align: center;
+  }
+
+
+.main-container .page-header{
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+.back-link{
+    margin: 25px;
+    text-align: start;/*başa hizalar*/
+    border: 3px solid #B3E5FC;
+    border-radius: 25px;
+    background-color: #B3E5FC;
+    display: inline-block; /*div e inline ve block özellikleri verilmesi için*/
+}
+
+
+.pricing-wrapper .card-footer{
+    display: flex;
+    flex-direction:row;
+   margin-top: auto;/*alta iter*/
+    /*card footerlerin kart içinde ortalanması için*/
+   align-items: center;
+   justify-content: center;
+   
+}
+
+.card-footer,.badge{
+    margin: 5px;
+   
+}
+
+
+}
