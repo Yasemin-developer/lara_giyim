@@ -520,7 +520,7 @@
        flex-direction: column;
        justify-content: center;
        align-items: center;
-      
+       backface-visibility: hidden;
         border-radius: 13px;
        }
        
@@ -623,4 +623,5 @@
           justify-content:center;
           column-gap: 25px;
       }
+
      }
