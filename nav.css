@@ -1,0 +1,216 @@
+
+
+
+body{
+    background-color: #80D8FF;
+    margin: 0px;
+    padding: 0px;
+   
+}
+
+*{
+     box-sizing: border-box;
+}
+
+button{
+     background-color:	#00B0FF ;
+}
+
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+.disabled{
+    color: darkgray;
+}
+
+@media (min-width:320px) and (max-width:767px){
+
+        .no_scroll{
+            overflow: hidden;/*yan menü açıkken sayfa kaydırılamaz*/
+        }
+
+            .navbar{
+                display: none;/*desktopta görünen navbar gizlenir,gösterilmez*/
+            }
+
+            
+          
+           .navtop{
+            width: 100%;
+            height: auto;/*içeriklerin yükseskliğiğ kadar yüksekliği var*/
+            background-color: #1E88E5;
+            display: flex;/*logo ve hamburger menü sembolünü hizalamak için*/
+            justify-content: space-between;/*yatay olarak en uçlara yerleştirir*/
+            align-items: center;/*dikeyde ortalar*/
+            position: fixed;/*sayfa kaydırlırsa bile navbar en üstte görünmeye devam eder*/
+             z-index:15;/*diğer elemanların arkasına geçmemek için diğer elemanlara göre daha büyük sayı verildi*/
+           padding-right: 20px;
+           }
+           .logo{
+             color: #c00c48;
+             margin: 10px;
+         font-size: 20px;
+         font-family:Georgia, 'Times New Roman', Times, serif;
+         font-weight: bold;
+           }
+
+           .navbar_mobile{
+            display: none;/*hamburger menü şuan görünmüyor basınca açılacak*/
+           }
+
+           /*sembole basılınca hamburger menü açılır*/
+           .navbar_mobile.active{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-top: 0px;
+            align-items: center;
+            padding: 40px;
+            background-color:  #1E88E5;
+             z-index:20;/*navtop a göre daha büyük sayı verildi ,navbar_mobile in arkasında kalan navtop un görünmemesi için*/
+            height: 100%;/*tüm yükseskliği kaplar*/
+            width: 40%;
+            position: fixed;/*sayfa aşağı kaydırlacaksa navbar_mobile hep yerinde kalması için ,yeri değişmemesi için*/
+            overflow: auto;/*kaydrılıma ihtiyacı olursa aşağı kayabilir*/
+           }
+           .navbar_mobile a{
+            font-size: 17px;
+            color: black;
+           text-align: center;
+            height: 15%;
+            margin-bottom: 15px;
+           padding: 15px 25px;
+            display: block;/*a inline bir element block elementlerin özelliklerini alması için block a dönüştürülür*/
+            font-weight: bold;
+           }
+           
+          
+           .navbar_mobile .dropdown-button{
+            border:none;
+            margin: 12px;
+            font-size: 17px;
+            font-weight: bold;
+            background-color:  #1E88E5 ;
+
+           }
+
+           .navbar_mobile .dropdown-content{
+            display: none;/*başlangıçta kategoriler divi kapalı görünmüyor*/
+           }
+
+
+            /*kategorilere basınca div açıldı*/
+           .navbar_mobile .dropdown-content.active{
+            /*içindekilerin alt alta ,yatay ve dikeyde ortalanması için*/
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+            background-color: #81D4FA;
+           }
+
+           .navbar_mobile .dropdown-content a{/*a inline element*/
+            color: rgb(8, 108, 133);
+            display: block;/*block elemente dönüştürüp block elemntin özelliklerini almasını sağladım*/
+            padding: 15px 20px;
+              text-align: center;
+           }
+          
+
+}
+
+@media (min-width:768px){
+
+    
+       
+           
+      
+          .navbar_mobile,.navtop{
+            display: none;
+          }
+         
+
+              .navbar{
+            display: flex;/*linkleri hizalamak için*/
+            background-color: #1E88E5;
+            margin-top: 0px;
+            justify-content: center;
+            width: 100%;
+            height: auto;/*yüksesklik içerdeki yapıların yükseskliğine bağlı*/
+            align-items: center;
+            position: fixed;/*aşağı kaydırırken bile yerinde sabit kalmasını sağlamak için(en üstte)*/
+            padding: 5px;
+             z-index:25;/*navbarın z indeksinde en yukarda kalmasını sağlyor ,
+             aşağı kaydırıldıkça ve dropdown açıldıkça diğer elemanların arkasında kalmıyor (diğer elemanlara 25 ten küçük bir sayı verdim)*/
+        }
+
+           .navbar  a{ /*a inline element*/
+            color: black;
+            font-size:20px;
+             padding: 14px 17px;
+            display: block; /*block elementlerin özelliklerini alması için ,genişlik yükseklik*/
+        }
+
+        .navbar button{
+            background-color: #1E88E5;
+             color: black;
+            font-size:20px;
+             padding: 14px 17px;
+           border: none;
+        }
+       
+        .logo{
+            color: #c00c48;
+            margin-right: 7px;
+         font-size: 25px;
+         font-family:Georgia, 'Times New Roman', Times, serif;
+         font-weight: bold;
+         
+        }
+      
+        .navbar a:hover,.navbar .dropdown-button:hover{
+            background-color: #0D47A1;
+            color: white;
+        }
+       
+        .navbar li{/*li block element*/
+            display: inline;/*yan yana dizilmeleri için , inline-block da verilebilir*/
+        }
+
+        .dropdown{
+            position: relative;/*dropdown-content adlı çocuğuna absolute vermek için*/
+        }
+       
+        .dropdown-content{
+            min-width: 210px;
+         background-color: #536DFE;
+          display: none;/*başlangıçta görünmez olur*/
+         z-index: 1;
+         position: absolute;/*Dropdown menünün normal akışı bozup aşağı doğru diğer elementleri itmesini engellemek,parente göre hizalanır*/
+         top: 100%;/*parent in tam yüksekliği kadar aşağı in*/
+         left: 0px;
+        }
+
+         .dropdown-content a{
+         
+         background-color: #E8EAF6;
+         color: black;
+         
+        
+        }
+
+        .dropdown-content a:hover{
+           background-color:  #0288D1;
+           color: white;
+        }
+
+
+        li.dropdown:hover .dropdown-content {/*div block eleman*/
+            display: block;/*başta gizliydi tekrar block yapmak için*/
+        }
+
+}
