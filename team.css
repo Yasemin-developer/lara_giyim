@@ -1,0 +1,626 @@
+ 
+        h1,h2,h4,h5,p{
+            text-align: center;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+          /*küçük ekraan -telefon*/
+        @media (min-width:320px) and (max-width:767px){
+            .team_members{
+        border: 1px solid rgb(8, 42, 194);
+        border-radius: 10px;
+        margin: 8px;
+        background-color: rgb(15, 182, 233);
+        /*içindekiki yapıları hizalamak için*/
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 250px;
+      }
+      .team_members p{
+        
+        font-size: 18px;
+        font-weight: bold;
+        color: rgb(9, 12, 199);
+      }
+             .team_container{
+           position: relative;/*bir alt elementte absolute kullanmak için*/  
+         width: 90%;
+        height: auto;/*yüksekliği içerik yüksekliği kadar*/
+        margin: 15px auto;/*yukardan,aşağıdan 15px -sağdan soldan otomatik dış boşluk*/
+         /*içeriği(kartları) yan yana diz sığmazsa alt satıra geç*/
+         display: flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         justify-content: space-around;
+         align-items: center;
+
+        }
+        
+        .card1_container,.card3_container{
+            position: relative;/*bir alt elementte absolute kullanmak için*/ 
+             perspective: 1000px;/*3D efektin derinliğini belirler*/
+            width: 85%;/*genişliğin %85i kadar*/
+        height: 450px;
+        margin: 15px;
+         box-shadow:0px 43px 25px rgba(0, 0, 0, 0.35);/*sağdan-alttan-canlılılk-alpha(opacity)*/
+         border-radius: 13px;
+        }
+
+        .card1_container{
+            z-index: 10;/*card1 e tıklandığında ya da üzerine gelindiğinde gösterilecek sertifikanın en önde olup diğer kartların arkasına gizlnmemesi için*/
+        }
+
+        .card3_container{
+            z-index: 5;/*card1 e göre daha az */
+        }
+    
+        
+        .card2_container{
+            position: relative;/*bir alt elementt absolute kullanmak için*/ 
+             perspective: 1000px;/*3D efektin derinliğini belirler*/
+            width: 85%;
+        height: 450px;
+        margin: 15px;
+        z-index: 5;/*card1 e göre daha az */
+        overflow: hidden;/*taşma olursa gizlemek için,çünkü aşağıdan yukarıya doğru gelecek*/
+        background-color: dodgerblue;
+        /*kartın içeriğini hizalamak*/
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 13px;
+         box-shadow:0px 43px 25px rgba(0, 0, 0, 0.35);/*sağdan-alttan-canlılılk-alpha(opacity)*/
+        }
+
+        .flip_card{
+        transform-style: preserve-3d;/*Çocuk elementlerin 3D uzayda kalmasını sağlar. Yoksa hepsi düzleşir.*/
+        width: 100%;
+        height:100%;
+        border-radius: 10px;
+        position: absolute;/*En yakın position:relative olan parent’a göre hizalanır.*/
+        transition: transform 3s ease;/*Hangi özelliğin animasyonlu değişeceğini, süresini ve hız eğrisini belirler.*/
+        border-radius: 13px;
+        }
+
+      
+       .flip_card .back{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       transform: rotateY(180deg);/*y ekseninde 180 derece döndür , arka yüzüne döndürmek*/
+       }
+       
+       .card3_container.active .flip_card{
+        transform: rotateY(180deg);/*karta basınca arkaya döndür*/
+       }
+
+        .slide_up_card{
+         position: absolute;/*En yakın position:relative olan parent’a göre hizalanır.*/
+          transform-style: preserve-3d;/*Çocuk elementlerin 3D uzayda kalmasını sağlar. Yoksa hepsi düzleşir.*/
+        width: 100%;
+        height:100%;
+        border-radius: 13px;
+        transition: top 2s ease-in;/*değiştirilecek özellik-süre-hız eğrisi*/
+        top: 100%;/*kartta şuan görünmüyor ,kartın yüksekliği kadar aşağı itilmiş*/
+       
+        }
+
+      .front,.back{
+          position: absolute;/*En yakın position:relative olan parent’a göre hizalanır.*/
+       backface-visibility: hidden;/*arka yüzü gizler*/
+       width: 100%;
+       height: 100%;
+       background-color:dodgerblue;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       border-radius: 13px;
+       }
+       
+     .front{
+        z-index: 2;/*.back e göre daha üst katmanda görünür*/
+     }
+
+     .back{
+        z-index: 1;/*.front a e göre daha alt katmanda görünür*/
+     }
+
+
+       
+     
+       .card2_container.active .slide_up_card{
+        top: 0;/*.slide_up_card ın top ile arasındaki mesafe 0 olur,kart yukarı kayarak görünür*/
+       }
+
+     
+.animation_card{
+    width:100%;
+    height:100%;
+    position:relative;/*kartın ön ve arka yüzüne absolute vermek için*/
+    transform-style:preserve-3d;/*Çocuk elementlerin 3D uzayda kalmasını sağlar. Yoksa hepsi düzleşir.*/
+    transition: transform 3s ease-in-out;/*görsel dönüşüm - süre - hız eğrisi*/
+    border-radius: 13px;
+}
+        
+        .animation_card .front ,.flip_card .front,
+        .slide_up_card .front,.card2_container 
+        {
+              display:flex;
+    justify-content:center;
+    align-items:center;
+    transform:rotateY(0);/*y ekseninde 0 derece döndürmek->hiç döndürmemek*/
+     overflow: hidden;/*taşmyı önler*/
+    
+       }
+        
+ 
+        .animation_card .back{
+        
+              display:flex;
+    justify-content:center;
+    align-items:center;
+     transform:rotateY(180deg);/*y ekseninde 180 derece döndür , arka yüzüne döndürmek*/
+     
+       }
+        
+     
+        .animation_card .front img,.animation_card .back img,
+        .flip_card .front img , .slide_up_card .front img ,.card2_container img
+        {
+            object-fit: cover;/*image in ona verilen alanı kaplaması için*/
+           width: 95%;/*parent in genişliğinin %95 ini kaplar*/
+        height: auto; /*genişliğe göre yükseklik ayarlanır,sınırlanmaz*/
+        margin-top: 8px;
+       }
+      
+     
+      
+   
+
+       @keyframes myanimation{
+        /*sertifika image'i , 0.2 si kadar büyüklükten başlayıp bulundauğu yerde 1.3 kadar büyüt
+        */
+         from {
+            transform: translate(0,0) scale(0.2);
+         }
+        to{
+            transform: translate(0vw,0vh) scale(1.3);
+         }
+       }
+
+       .card1_container.active .animation_card {
+         
+         transform: rotateY(180deg);/*.card1_container üzerine geline .animation_card y ekseninde 180 derece dönsün*/
+       }
+
+      .card1_container.active .back img{
+    animation:myanimation 4s ease forwards;/*uygulanacak animasyon-süre-hız eğrisi-
+    son belirlenen stili korur*/
+      }
+
+   .iletisim_container{
+        margin: 20px;
+          display: flex;
+          justify-content:center;
+          column-gap: 15px;
+      }
+       
+      .iletisim_container img{
+        width: 65px;
+        height: 65px;
+      }
+       
+        }
+
+        @media (min-width:768px) and (max-width:1024px){
+            .team_container{
+           position: relative;/*bir alt elementte absolute kullanmak için*/  
+         width: 98%;
+        margin: 15px auto;/*yukardan aşağıdan 15px ,soldan sağdan otomatik dış boşluk*/
+         display: flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         justify-content: space-around;
+         align-items: center;
+
+        }
+        
+        .card1_container,.card3_container{
+            position: relative;/*bir alt elementte absolute kullanmak için*/ 
+             perspective: 1000px;/*3D efektin derinliğini belirler*/
+            width: 40%;
+        height: 400px;
+        margin: 10px;
+         box-shadow:0px 43px 25px rgba(0, 0, 0, 0.35);/*gölge olşturmak için*/
+         border-radius: 13px;
+        }
+
+        .card1_container{
+            z-index: 10;/*1.karta basınca çıkan sertifakının diğer kartların arkasında kalmaması için diğer kartlara göre büyük sayı verdim*/
+        }
+
+        .card3_container{
+            z-index: 5;
+        }
+    
+        
+        .card2_container{
+            position: relative;/*bir alt elementt absolute kullanmak için*/ 
+             perspective: 1000px;/*3D efektin derinliğini belirler*/
+            width: 40%;
+        height: 400px;
+        margin: 10px;
+        z-index: 5;
+        overflow: hidden;/*taşma olursa gizlemek için,çünkü aşağıdan yukarıya doğru gelecek*/
+        background-color: dodgerblue;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 13px;
+         box-shadow:0px 36px 25px rgba(0, 0, 0, 0.35);/*gölge vermek için*/
+        }
+
+        .flip_card{
+        transform-style: preserve-3d;/*Çocuk elementlerin 3D uzayda kalmasını sağlar. Yoksa hepsi düzleşir.*/
+        width: 100%;
+        height:100%;
+        border-radius: 10px;
+        position: absolute;/*En yakın position:relative olan parent’a göre hizalanır.*/
+        transition: transform 3s ease;/*görsel dönüşüm-süre-hız eğrisi*/
+        border-radius: 13px;        }
+
+      
+       .flip_card .back{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       transform: rotateY(180deg);/*y ekseninde 180 derece döndür , arka yüzüne döndürmek*/
+       border-radius: 13px;
+       }
+       
+       .card3_container.active .flip_card{
+        transform: rotateY(180deg);/*karta basınca gelince arkaya döndür*/
+       }
+
+        .slide_up_card{
+         position: absolute;/*En yakın position:relative olan parent’a göre hizalanır.*/
+          transform-style: preserve-3d;/*Çocuk elementlerin 3D uzayda kalmasını sağlar. Yoksa hepsi düzleşir.*/
+        width: 100%;
+        height:100%;
+        border-radius: 13px;
+        transition: top 2s ease-in;/*değiştirilecek özellik-süre-hız eğrisi*/
+        top: 100%;/*kartta şuan görünmüyor ,kartın yüksekliği kadar aşağı itilmiş*/
+       
+        }
+
+      .front,.back{
+          position: absolute;/*En yakın position:relative olan parent’a göre hizalanır.*/
+       backface-visibility: hidden;/*arka yüzü gizler*/
+       width: 100%;
+       height: 100%;
+       background-color:dodgerblue;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       border-radius: 13px;
+       }
+       
+     .front{
+        z-index: 2;/*.back e göre daha üst katmanda görünür*/
+     }
+
+     .back{
+        z-index: 1;/*.front a e göre daha alt katmanda görünür*/
+     }
+
+
+       
+     
+       .card2_container.active .slide_up_card{
+        top: 0;/*.slide_up_card ın top ile arasındaki mesafe 0 olur,kart yukarı kayarak görünür*/
+       }
+
+     
+.animation_card{
+    width:100%;
+    height:100%;
+    position:relative;/*front ve back e absolute vermek için*/
+    transform-style:preserve-3d;/*Çocuk elementlerin 3D uzayda kalmasını sağlar. Yoksa hepsi düzleşir.*/
+    transition: transform 3s ease-in-out;/*görsel dönüşüm - süre - hız eğrisi*/
+    border-radius: 13px;
+}
+        
+        .animation_card .front ,.flip_card .front,
+        .slide_up_card .front,.card2_container 
+        {
+              display:flex;
+    justify-content:center;
+    align-items:center;
+    transform:rotateY(0);/*y ekseninde 0 derece döndürmek->hiç döndürmemek*/
+     overflow: hidden;/*taşmyı önler*/
+    
+       }
+        
+ 
+        .animation_card .back{
+        
+              display:flex;
+    justify-content:center;
+    align-items:center;
+     transform:rotateY(180deg);/*y ekseninde 180 derece döndür , arka yüzüne döndürmek*/
+     
+       }
+        
+     
+        .animation_card .front img,.animation_card .back img,
+        .flip_card .front img , .slide_up_card .front img ,.card2_container img
+        {
+            object-fit: cover;/*image in ona verilen alanı kaplaması için*/
+           width: 95%;/*parent in genişliğinin %95 ini kaplar*/
+        height: auto; /*genişliğe göre yükseklik ayarlanır,sınırlanmaz*/
+       }
+      
+     
+      
+   
+
+       @keyframes myanimation{
+        /*sertifika image i , 0.4 si büyüklüğü kadar bulunduğu yerden
+        başlayıp ekran genişliğinin %22si kadar sağa ve ekran yüksekliğinin %5 i kadar
+        aşağıya taşı
+        */
+         from {
+            transform: translate(0,0) scale(0.4);
+         }
+        to{
+            transform: translate(22vw,5vh) scale(1.3);
+         }
+       }
+
+       .card1_container.active .animation_card {
+         
+         transform: rotateY(180deg);/*.card1_container e basınca .animation_card y ekseninde 180 derece dönsün*/
+       }
+
+      .card1_container.active .back img{
+    animation:myanimation 4s ease forwards;/*uygulanacak animasyon-süre-hız eğrisi-
+    son belirlenen stili korur*/
+      }
+      .team_members{
+        border: 1px solid rgb(8, 42, 194);
+        border-radius: 10px;
+        margin: 10px;
+        background-color: rgb(15, 182, 233);
+         min-height: 280px;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+      }
+      .team_members p{
+        font-size: 20px;
+        font-weight: bold;
+        color: rgb(9, 12, 199);
+      }
+
+      .iletisim_container{
+        margin: 20px;
+          display: flex;
+          justify-content:center;
+          column-gap: 20px;
+      }
+       
+      .iletisim_container img{
+        width: 75px;
+        height: 75px;
+      }
+       
+        }
+       
+
+        /*büyük ekran - bilgisayar*/
+     @media (min-width:1025px){
+         
+         .team_container{
+             position: relative;
+         width: 98%;
+         height: 500px;
+        margin: 15px auto;
+        
+         display: flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         justify-content: space-around;
+         align-items: center;
+          overflow: visible;
+        }
+        
+        .card1_container,.card3_container{
+            position: relative;
+             perspective: 1000px;/*3D efektin derinliğini belirler.*/
+            width: 32%;
+        height: 450px;
+        margin: 5px;
+        box-shadow:0px 43px 25px rgba(0, 0, 0, 0.35);
+       border-radius: 13px;
+        }
+
+        .card1_container{
+            z-index: 10;
+        }
+
+        .card3_container{
+            z-index: 5;
+        }
+    
+        
+        .card2_container{
+            position: relative;
+             perspective: 1000px;/*3D efektin derinliğini belirler.*/
+            width: 32%;
+        height: 450px;
+        margin: 5px;
+        z-index: 5;
+        overflow: hidden;
+        background-color: dodgerblue;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+            box-shadow:0px 43px 25px rgba(0, 0, 0, 0.35);
+        border-radius: 13px;
+        }
+
+        .flip_card{
+        transform-style: preserve-3d;/*Çocuk elementlerin 3D uzayda kalmasını sağlar. Yoksa hepsi düzleşir.*/
+        width: 100%;
+        height:100%;
+       
+        position: relative;
+        transition: transform 2s ease;/*Hangi özelliğin animasyonlu değişeceğini, süresini ve hız eğrisini belirler.*/
+        }
+
+      
+       .flip_card .back{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       transform: rotateY(180deg);
+      
+       }
+       
+       .card3_container:hover .flip_card{
+        transform: rotateY(180deg);
+       }
+
+        .slide_up_card{
+            position: absolute;/*En yakın position:relative olan parent’a göre hizalanır.*/
+            transform-style: preserve-3d;/*Çocuk elementlerin 3D uzayda kalmasını sağlar. Yoksa hepsi düzleşir.*/
+        width: 100%;
+        height:100%;
+       
+        transition: top 2s ease-in;
+        top: 100%;
+       
+        }
+
+      .front,.back{
+       position: absolute;/*En yakın position:relative olan parent’a göre hizalanır.*/
+       width: 100%;
+       height: 100%;
+       background-color:dodgerblue;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+      
+        border-radius: 13px;
+       }
+       
+     .front{
+        z-index: 2;/*sadece position verilmiş elementlerde çalışır.*/
+     }
+
+     .back{
+        z-index: 1;
+     }
+
+
+       
+     
+       .card2_container:hover .slide_up_card{
+        top: 0;
+       }
+
+     
+.animation_card{
+    width:100%;
+    height:100%;
+    position:relative;
+    transform-style:preserve-3d;/*Çocuk elementlerin 3D uzayda kalmasını sağlar. Yoksa hepsi düzleşir.*/
+    transition: transform 0.8s;
+}
+        
+        .animation_card .front ,.flip_card .front,
+        .slide_up_card .front,.card2_container 
+        {
+        
+              display:flex;
+    justify-content:center;
+    align-items:center;
+    transform:rotateY(0);
+     overflow: hidden;
+    
+       }
+        
+ 
+        .animation_card .back{
+        
+              display:flex;
+    justify-content:center;
+    align-items:center;
+     transform:rotateY(180deg);
+     
+       }
+        
+     
+        .animation_card .front img,.animation_card .back img,
+        .flip_card .front img , .slide_up_card .front img ,.card2_container img
+        {
+            object-fit: cover;/*görüntüyü bozmadan alanı kaplar*/
+           width: 80%;
+        height: auto;
+       }
+      
+     
+      
+   
+
+       @keyframes myanimation{
+         from {
+            transform: translate(0,0) scale(0.6);
+         }
+        to{
+            transform: translate(33vw,-10vh) scale(1.4);
+         }
+       }
+
+       .card1_container:hover .animation_card {
+         
+         transform: rotateY(180deg);
+       }
+
+      .card1_container:hover .back img{
+    animation:myanimation 4s ease forwards;
+      }
+      .team_members{
+        border: 1px solid rgb(8, 42, 194);
+        border-radius: 10px;
+        margin: 10px;
+        min-height: 220px;
+        background-color: rgb(15, 182, 233);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .team_members p{
+        font-size: 25px;
+        font-weight: bold;
+        color: rgb(9, 12, 199);
+      }
+
+      .iletisim_container{
+        margin: 20px;
+          display: flex;
+          justify-content:center;
+          column-gap: 25px;
+      }
+     }
