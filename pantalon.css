@@ -3,11 +3,11 @@
 @media (min-width:320px) and (max-width:767px){
        
  .pantalon_container{
-     margin: 0px auto;/*yatayda ortalar*/
+     margin: px auto;/*yatayda ortalar*/
    width: 100%;
     display: grid;
     grid-template-columns: 1fr  ;/*1 sütun*/
-    gap:5px;/*kutular araında her yönden 5px boşluk bırakır*/
+    gap:12px;/*kutular araında her yönden 5px boşluk bırakır*/
   box-sizing: border-box; /*taşmayı önler*/
    
     text-align: center;
@@ -19,7 +19,7 @@
 
   
 .p_foto {
-    background-color: aqua;
+    background-color: #4FC3F7;
     padding: 15px;
 
 }
@@ -48,7 +48,7 @@
    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr ;/*aynı satırda genişliği eşit 2 sütun*/
-    gap:10px;/*kutular araında her yönden 10px boşluk bırakır*/
+    gap:15px;/*kutular araında her yönden 10px boşluk bırakır*/
   box-sizing: border-box; /*taşmayı önler*/
    
    text-align: center;
@@ -62,7 +62,7 @@
 
   
 .p_foto {
-    background-color: aqua;
+    background-color: #4FC3F7;
     padding:20px;
 }
 
@@ -88,11 +88,11 @@
    
    
  .pantalon_container{
-     margin: 0px auto;/*yatayda ortalanıyor*/
+     margin: 12px auto;/*yatayda ortalanıyor*/
    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;/*aynı satırda genişliği eşit 3 sütun*/
-    gap:10px;/*kutular araında her yönden 10px boşluk bırakır*/
+    gap:15px;/*kutular araında her yönden 10px boşluk bırakır*/
   box-sizing: border-box; /*taşmayı önler*/
     border-radius: 20px;
      text-align: center;
@@ -104,7 +104,7 @@
 
 
 .p_foto {
-    background-color: aqua;
+    background-color: #4FC3F7;
     padding: 30px;
 
 }
