@@ -7,7 +7,7 @@
    width: 100%;
     display: grid;
     grid-template-columns: 1fr  ;/*1 sütun*/
-    gap:5px;/*kutular araında her yönden 5px boşluk bırakır*/
+    gap:12px;/*kutular araında her yönden 5px boşluk bırakır*/
   box-sizing: border-box; /*taşmayı önler*/
    
     text-align: center;
@@ -19,7 +19,7 @@
 
   
 .ak_foto {
-    background-color: aqua;
+    background-color:#4FC3F7;
     padding: 15px;
 
 }
@@ -49,7 +49,7 @@
    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr ;/*aynı satırda genişliği eşit 2 sütun*/
-    gap:10px;/*kutular araında her yönden 10px boşluk bırakır*/
+    gap:15px;/*kutular araında her yönden 10px boşluk bırakır*/
   box-sizing: border-box; /*taşmayı önler*/
    
    text-align: center;
@@ -63,7 +63,7 @@
 
   
 .ak_foto {
-    background-color: aqua;
+    background-color: #4FC3F7;
     padding:20px;
 }
 
@@ -88,11 +88,11 @@
 @media (min-width:1025px){
    
  .ak_container{
-     margin: 0px auto;
+     margin: 12px auto;
    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;/*aynı satırda genişliği eşit 3 sütun*/
-    gap:10px;/*kutular araında her yönden 10px boşluk bırakır*/
+    gap:15px;/*kutular araında her yönden 10px boşluk bırakır*/
   box-sizing: border-box; /*taşmayı önler*/
     border-radius: 20px;
     margin-left: 5px;
@@ -105,7 +105,7 @@
 
 
 .ak_foto {
-    background-color: aqua;
+    background-color: #4FC3F7;
     padding: 30px;
 
 }
