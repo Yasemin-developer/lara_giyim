@@ -81,7 +81,7 @@
         width: 100%;
         height:100%;
         border-radius: 10px;
-        position: absolute;/*En yakın position:relative olan parent’a göre hizalanır.*/
+        position: relative;
         transition: transform 3s ease;/*Hangi özelliğin animasyonlu değişeceğini, süresini ve hız eğrisini belirler.*/
         border-radius: 13px;
         }
@@ -625,3 +625,4 @@
       }
 
      }
+
