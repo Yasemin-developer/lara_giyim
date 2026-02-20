@@ -2,17 +2,15 @@
 
 
 
-/*nav etiketinin ve hero bölümünün mobilde görünüşünün ayarlanması*/
+/*hero bölümünün mobilde görünüşünün ayarlanması*/
 @media (min-width:320px) and (max-width:767px){
    
 
 #hero{
    
-       
-    
+        margin: 20px auto;
      display:grid;
    grid-template-rows: auto auto; /*satır yükeskliği içerik yüksekliğine göre*/
-     box-sizing: border-box; 
      justify-content:center; /*yatayda ortalar*/
      align-content: center; /*dikeyde ortalar*/
      
@@ -22,7 +20,7 @@
 
 #hero button{
     border-radius: 25px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     margin:5px;
     padding: 3px;
@@ -31,12 +29,26 @@
 #hero_foto{
     height:auto;/*resim yüksekliği içerikle uyumlu*/
     margin: 25px;
+    animation: yukariaşagi 3s ease-in-out infinite;
+}
+
+
+
+@keyframes yukariaşagi {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); 
+  }
 }
 
 #hero_foto img{
  width: 100%;
  height: 100%;
  object-fit: cover; /*resim bulunduğu alanı kaplasın*/
+    border: 2px solid black;
+    border-radius: 10px;
 }
 #hero #hero_aciklama{
     width: 100%;
@@ -44,7 +56,7 @@
     text-transform: uppercase; /*büyük harf*/
     display: flex;
     flex-direction: column; /*yazıların dikey olarak alt alta yazılması*/
-   gap: 20px;
+   gap: 10px;
   
 }
 #hero #hero_aciklama div{
@@ -67,38 +79,55 @@ h1{
 @media (min-width:768px){
  
 #hero{
-    margin: 5px auto;
-    
+    margin: 20px auto;
      display: grid;
-   grid-template-columns: 1fr 2fr;/*yazı bölümüne 3te 1 image bölümüne 3te 2*/
+   grid-template-columns:1fr 1fr;/*yazı bölümüne 3te 1 image bölümüne 3te 2*/
      box-sizing: border-box;
-    gap: 20px;
-    
-     
+    gap: 5px;
+        justify-content: center; /*yatayda ortalar*/
+        align-items: center; /*dikeyde ortalar*/
+     height: 400px;
 }
 
+
 #hero div{
-  padding: 7px;
-   
+ padding: 20px;
+ 
 }
 
 #hero button{
     border-radius: 30px;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     padding: 5px;
 }
 
 #hero_foto {
 height: 100%;
- 
+animation: yukariaşagi 3s ease-in-out infinite; 
 }
+
+
+
+@keyframes yukariaşagi {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); 
+  }
+}
+
 
 #hero_foto img{
  width: 100%;
  height: 100%;
   object-fit: cover;
+  border: 2px solid black;
+ border-radius: 10px;
+ 
 }
+
 #hero #hero_aciklama{
     width: 100%;
     text-align: center;
@@ -106,17 +135,21 @@ height: 100%;
      display: flex;
      flex-direction: column;
      justify-content: center;
-  
+        align-items: center;
+    margin-left: 10px;
 }
+
 #hero #hero_aciklama div{
     width: 100%;
+     height: 100%;
     text-align: center;
     text-transform: uppercase; /*büyük harf*/
+    padding: 5px;
    
-    margin: 10px;
 }
+
 h1{
-      font-size: 25px;
+      font-size: 20px;
     margin: 7px;
 }
 
