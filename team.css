@@ -5,6 +5,14 @@
             font-weight: bold;
         }
 
+        .dark-mode .card2_container,.dark-mode .front,.dark-mode .back ,.dark-mode .team_members{
+            background-color: #0097A7 !important;
+          }
+          
+          .dark-mode p{
+            color: aliceblue !important;
+          }
+
           /*küçük ekraan -telefon*/
         @media (min-width:320px) and (max-width:767px){
             .team_members{
@@ -66,7 +74,7 @@
         margin: 15px;
         z-index: 5;/*card1 e göre daha az */
         overflow: hidden;/*taşma olursa gizlemek için,çünkü aşağıdan yukarıya doğru gelecek*/
-        background-color: dodgerblue;
+        background-color: #00BCD4;
         /*kartın içeriğini hizalamak*/
         display: flex;
         flex-direction: column;
@@ -114,7 +122,7 @@
        backface-visibility: hidden;/*arka yüzü gizler*/
        width: 100%;
        height: 100%;
-       background-color:dodgerblue;
+       background-color:#00BCD4;
        display: flex;
        flex-direction: column;
        justify-content: center;
@@ -257,7 +265,7 @@
         margin: 10px;
         z-index: 5;
         overflow: hidden;/*taşma olursa gizlemek için,çünkü aşağıdan yukarıya doğru gelecek*/
-        background-color: dodgerblue;
+        background-color: #00BCD4;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -304,7 +312,7 @@
        backface-visibility: hidden;/*arka yüzü gizler*/
        width: 100%;
        height: 100%;
-       background-color:dodgerblue;
+       background-color:#00BCD4;
        display: flex;
        flex-direction: column;
        justify-content: center;
@@ -469,7 +477,7 @@
         margin: 5px;
         z-index: 5;
         overflow: hidden;
-        background-color: dodgerblue;
+        background-color:#00BCD4;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -515,7 +523,7 @@
        position: absolute;/*En yakın position:relative olan parent’a göre hizalanır.*/
        width: 100%;
        height: 100%;
-       background-color:dodgerblue;
+       background-color:#00BCD4;
        display: flex;
        flex-direction: column;
        justify-content: center;
@@ -623,6 +631,4 @@
           justify-content:center;
           column-gap: 25px;
       }
-
      }
-
