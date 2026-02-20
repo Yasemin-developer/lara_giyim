@@ -1,4 +1,12 @@
-/*pantalon ürünlerinin mobilde düzenlenmesi*/
+
+
+.dark-mode .ak_container div{
+    background-color: #0097A7 !important;
+  }
+
+
+
+/*aksesuar ürünlerinin mobilde düzenlenmesi*/
 
 @media (min-width:320px) and (max-width:767px){
     
