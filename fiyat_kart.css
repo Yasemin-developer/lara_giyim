@@ -1,3 +1,15 @@
+
+
+
+.dark-mode .card,.dark-mode .card-popular{
+    background-color: #0097A7 !important;
+}
+
+
+.dark-mode .pricing-wrapper button{
+    background-color: rgb(103, 114, 110) !important;
+}
+
 /*fiyatlandırma kartının mobilde görünüşünün ayarlanması*/
 @media (min-width:320px) and (max-width:767px){
   
@@ -7,7 +19,9 @@
     display:grid ;
     grid-template-columns: 1fr ;/*mevcut genişliği bir kutunun genişliği için kullanır*/
     row-gap: 10px; /*alt alta duran iki kutu arası mesafe*/
-   
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
     
 }
 
@@ -19,14 +33,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 5px;
-   background-color:#0097A7;
+    width: 60%;
+   background-color:#00BCD4;
+   margin: 20px;
   
 }
 .main-container .page-header{
     text-align: center;
+    margin-bottom: 10px;
 }
 
+.main-container{
+    margin: 10px;
+}
 
 ul {
     list-style: none;
@@ -58,11 +77,33 @@ ul {
    
 }
 
+
+.selected{
+    background-color:#00B0FF !important;
+   transform: scale(1.08);
+   transition: transform 0.3s ease;
+  
+   }
+
+
+   .card-footer button{
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    margin:5px;
+    padding: 3px;
+    background-color: #a2aaad;
+}
+
 }
 
 
 /*fiyatlandırma kartının tablet ve pc de görünüşünün ayarlanması*/
 @media (min-width:768px){
+    
+    
+
+
 
 li{
     font-size: 25px;
@@ -71,9 +112,10 @@ li{
 .pricing-wrapper{
     display:grid ;
     grid-template-columns: 1fr 1fr 1fr;/*eşit yüksekliğe sahip 3 sütun*/
-    column-gap: 30px;/*sütunlar arasında boşluk*/
-   align-items: stretch;
-    
+   justify-content: center;
+   justify-items: center;
+   align-items: center;
+    margin:auto;
 }
 
 .pricing-wrapper .card,.card-popular{
@@ -83,12 +125,12 @@ li{
     height: 100%; /*align-items:stretch ile brlikte kartların eşit yükekliğe sahip olmasını sağlar*/
  display: flex;/*kartların içindeki yapıları hizalayabilmek için*/
  flex-direction: column;
- background-color:#0097A7;
+ background-color:#00BCD4;
   justify-content: center;
    align-items: center;
-   margin: 5px;
+   flex-wrap: wrap;
+   width: 85%;
 }
-
 
   
   .card-header,.badge{
@@ -98,6 +140,7 @@ li{
 
 .main-container .page-header{
     text-align: center;
+    margin-bottom: 30px;
 }
 
 ul {
@@ -126,13 +169,30 @@ ul {
 
 .card-footer,.badge{
     margin: 5px;
-   
+  
+}
+
+
+.card-footer button{
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    margin:5px;
+    padding: 3px;
+    background-color: #a2aaad;
 }
 
 .main-container{
-    margin-top: 12px;
+    margin-top: 16px;
+   
 }
 
+.selected{
+    background-color:#00B0FF !important;
+   transform: scale(1.08);
+   transition: transform 0.3s ease;
+  
+   }
 
 
 }
