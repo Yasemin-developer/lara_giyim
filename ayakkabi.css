@@ -1,3 +1,10 @@
+
+
+.dark-mode .ay_container div{
+    background-color: #0097A7 !important;
+  }
+
+
 /*pantalon ürünlerinin mobilde düzenlenmesi*/
 
 @media (min-width:320px) and (max-width:767px){
