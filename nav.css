@@ -8,12 +8,56 @@ body{
    
 }
 
+body.dark-mode{
+     background-color:#5d94e7 !important;
+}
+
+
+.dark-mode button:not(#mode-toggle){
+    background-color:#006064 ;
+}
+
+
+.dark-mode .navbar , .dark-mode .navtop , .dark-mode .navbar_mobile , .dark-mode .navbar_mobile .dropdown-button,.dark-mode .navbar .dropdown-button {
+    background-color:#0288D1 !important;
+     font-weight: bold;
+    }
+
+
+   .dark-mode  .dropdown-content a{
+         
+         background-color: #303030 !important;
+         color: rgb(243, 241, 241) !important;
+         
+        
+        } 
+
+         .dark-mode  .dropdown-content a:hover{
+         
+         background-color: #0288D1 !important;
+         color: rgb(243, 241, 241) !important;
+         
+        
+        } 
+
+        .dark-mode .dropdown-content{
+            background-color: #303030 !important;
+        }
+
+
+
+ .navbar , .navtop , .navbar_mobile , .navbar_mobile .dropdown-button,.navbar .dropdown-button {
+    background-color: #40C4FF;
+     color: black;
+     font-weight: bold;
+    }
+
 *{
      box-sizing: border-box;
 }
 
 button{
-     background-color:	#00B0FF ;
+     background-color:	#25beec ;
 }
 
 a{
@@ -42,7 +86,6 @@ ul{
            .navtop{
             width: 100%;
             height: auto;/*içeriklerin yükseskliğiğ kadar yüksekliği var*/
-            background-color: #1E88E5;
             display: flex;/*logo ve hamburger menü sembolünü hizalamak için*/
             justify-content: space-between;/*yatay olarak en uçlara yerleştirir*/
             align-items: center;/*dikeyde ortalar*/
@@ -50,6 +93,13 @@ ul{
              z-index:15;/*diğer elemanların arkasına geçmemek için diğer elemanlara göre daha büyük sayı verildi*/
            padding-right: 20px;
            }
+
+           .navtop .hamburger{
+            font-size: 25px;
+            margin: 10px;
+            cursor: pointer;/*üzerine gelince tıklanabilir olduğunu göstermek için*/
+           }
+
            .logo{
              color: #c00c48;
              margin: 10px;
@@ -60,6 +110,7 @@ ul{
 
            .navbar_mobile{
             display: none;/*hamburger menü şuan görünmüyor basınca açılacak*/
+           
            }
 
            /*sembole basılınca hamburger menü açılır*/
@@ -70,7 +121,6 @@ ul{
             margin-top: 0px;
             align-items: center;
             padding: 40px;
-            background-color:  #1E88E5;
              z-index:20;/*navtop a göre daha büyük sayı verildi ,navbar_mobile in arkasında kalan navtop un görünmemesi için*/
             height: 100%;/*tüm yükseskliği kaplar*/
             width: 40%;
@@ -94,8 +144,7 @@ ul{
             margin: 12px;
             font-size: 17px;
             font-weight: bold;
-            background-color:  #1E88E5 ;
-
+          
            }
 
            .navbar_mobile .dropdown-content{
@@ -119,6 +168,37 @@ ul{
             padding: 15px 20px;
               text-align: center;
            }
+       
+#mode-toggle {
+    width: 50px;
+    height: 25px;
+    background-color: #ccc; 
+    border-radius: 25px;
+    padding: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.4s;
+}
+
+/* Hareket Eden Daire */
+.circle {
+    width: 19px;
+    height: 19px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Hafif zıplama efekti ekler */
+}
+
+.dark-mode #mode-toggle {
+    background-color: #444; /* Dark mode arka planı */
+}
+
+.dark-mode .circle {
+  
+    transform: translateX(25px); 
+    background-color: #f0f0f0;
+}
           
 
 }
@@ -136,7 +216,6 @@ ul{
 
               .navbar{
             display: flex;/*linkleri hizalamak için*/
-            background-color: #1E88E5;
             margin-top: 0px;
             justify-content: center;
             width: 100%;
@@ -156,7 +235,7 @@ ul{
         }
 
         .navbar button{
-            background-color: #1E88E5;
+         
              color: black;
             font-size:20px;
              padding: 14px 17px;
@@ -213,4 +292,36 @@ ul{
             display: block;/*başta gizliydi tekrar block yapmak için*/
         }
 
+
+  
+#mode-toggle {
+    width: 50px;
+    height: 25px;
+    background-color: #ccc; 
+    border-radius: 25px;
+    padding: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.4s;
+}
+
+/* Hareket Eden Daire */
+.circle {
+    width: 19px;
+    height: 19px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Hafif zıplama efekti ekler */
+}
+
+.dark-mode #mode-toggle {
+    background-color: #444; /* Dark mode arka planı */
+}
+
+.dark-mode .circle {
+  
+    transform: translateX(25px); 
+    background-color: #f0f0f0;
+}
 }
